@@ -1,0 +1,5 @@
+@mixin fixedForm {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}

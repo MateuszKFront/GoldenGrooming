@@ -1,0 +1,179 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #F2F2E2;
+  font-family: 'Oxygen', sans-serif;
+  min-width: 300px;
+  position: relative;
+  height: 1200px; }
+
+ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  justify-content: space-evenly; }
+
+li {
+  border: 1px solid #F2B705;
+  border-radius: 25px;
+  padding: .5em;
+  margin-right: .5em;
+  display: inline;
+  width: 160px;
+  height: 40%;
+  text-align: center; }
+
+a {
+  box-sizing: inherit;
+  text-decoration: none;
+  color: #F2B705; }
+
+li:hover {
+  box-shadow: 2px -1px 4px -1px #F2B705; }
+
+header {
+  height: 15vh;
+  margin-top: 0px;
+  width: 100%;
+  background-color: #262626; }
+
+h1 {
+  height: 50%;
+  margin: 0px; }
+
+.logo {
+  margin: auto;
+  font-weight: 600; }
+
+nav {
+  display: flex;
+  height: 50%;
+  justify-content: center;
+  align-items: space-evenly; }
+
+.imgsvg {
+  position: absolute;
+  top: 20%; }
+
+/* 
+Color:
+#F2CB05
+#F2B705
+#F29F05
+#F2F2F2
+#262626
+*/
+.appearFormButton {
+  position: fixed;
+  border-radius: 50%;
+  right: 1em;
+  top: 90vh; }
+
+.appearContact {
+  animation: makeFormAppear 1s cubic-bezier(0.24, 0.85, 0.74, 0.92) forwards; }
+
+.disappearContact {
+  animation: makeFormDisappear 1s ease-in forwards; }
+
+form {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: 400px;
+  top: 20vh;
+  right: 0px; }
+
+/* form field */
+label {
+  display: block;
+  font-weight: 100;
+  margin-left: .25em; }
+
+input::placeholder {
+  color: black; }
+
+.userData {
+  font-weight: 500;
+  background-color: #F2F2F2;
+  color: #262626;
+  height: 0.5em;
+  padding: 1em;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  border: 1px solid #585858; }
+
+textarea.userData {
+  margin-bottom: 0px;
+  font-family: inherit;
+  min-height: 4em;
+  resize: none;
+  border-bottom: none; }
+
+.dogsize {
+  display: flex;
+  width: 100%;
+  font-size: .0em; }
+
+.sizeValue {
+  display: inline-block; }
+
+.inputValid {
+  border-left: 0.5em solid #3d903d;
+  animation: validationMark .5s ease; }
+
+.inputInvalid {
+  border-left: 0.5em solid #be4141;
+  animation: validationMark .5s ease; }
+
+@keyframes validationMark {
+  from {
+    border-left: 0em solid; }
+  to {
+    border-left: 0.5em solid; } }
+
+@keyframes makeFormAppear {
+  0% {
+    right: -320px; }
+  50% { }
+  100% {
+    right: 0px; } }
+
+@keyframes makeFormDisappear {
+  to {
+    right: -320px; } }
+
+/* input field */
+button {
+  position: relative;
+  min-height: 2em;
+  padding: 1em;
+  font-size: large;
+  background-color: #F2CB05;
+  border: 1px solid black; }
+
+button::before {
+  content: '';
+  display: inline-block;
+  height: 2px;
+  position: absolute;
+  top: 80%;
+  left: 35%;
+  text-align: center; }
+
+button:hover {
+  background-color: #F2B705; }
+
+button:hover::before {
+  animation: buttonHover 1s forwards; }
+
+@keyframes buttonHover {
+  from {
+    width: 0%; }
+  to {
+    width: 30%;
+    background-color: #262626; } }
+
+/* form email button styles */

@@ -1,0 +1,41 @@
+.beng { 
+ & .bar1 {
+      animation: reSpin 300ms cubic-bezier(.8, 0, .2, 1) forwards;
+  }
+  & .bar2{
+      animation:  middleBarNonDisplay 300ms forwards;
+  }
+  & .bar3 {
+      animation: spin 300ms cubic-bezier(.8, 0, .2, 1) forwards;
+  }
+
+
+@keyframes middleBarNonDisplay{
+  from {
+      opacity: 1;
+  }
+  to { 
+      opacity: 0;}   
+}
+@keyframes spin {
+  0% {
+      transform: translate(0px, -16px);
+  }
+  50% { transform: translate(0px, 0px);
+  }
+  100% { 
+    transform: rotate(45deg); 
+  }
+}
+@keyframes reSpin {
+  0% { 
+      transform: translate(0px, 16px);
+  }
+  50% { 
+      transform: translate(0px, 0px);
+  }
+  100% { 
+      transform: rotate(-45deg); 
+  }
+  }
+}

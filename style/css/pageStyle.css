@@ -1,43 +1,150 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
 body {
   margin: 0px;
   padding: 0px;
-  background-color: #F2F2E2;
+  font-size: 1rem;
+  background-color: #383838;
   font-family: 'Oxygen', sans-serif;
-  min-width: 300px;
   position: relative;
   height: 1200px; }
 
+header {
+  width: 100vw;
+  background-color: black; }
+  header > #logo {
+    width: 100%;
+    height: 20vh;
+    background: #000000 url(/style/css/logo.jpg) no-repeat center;
+    background-size: cover; }
+  header nav {
+    width: 100vw;
+    display: grid; }
+    header nav div > button.listMenuDisplay {
+      display: flex;
+      place-items: center;
+      position: relative;
+      float: right;
+      background-color: black;
+      border: none;
+      width: 50px;
+      height: inherit;
+      padding: 0px;
+      padding-top: 0px;
+      margin: 0px .5em auto 0.5em;
+      outline: none; }
+      header nav div > button.listMenuDisplay div {
+        background-color: #F2B705;
+        margin-bottom: 0px; }
+    header nav div {
+      height: 50px;
+      background-color: black; }
+
+.burger {
+  width: 100%;
+  height: 14.5%;
+  border-radius: 25px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4); }
+  .burger:first-child {
+    background-color: gold;
+    transform: translate(0px, -16px); }
+    .burger:first-child:visited {
+      background-color: red; }
+  .burger:nth-child(2) {
+    background-color: gold; }
+  .burger:last-child {
+    background-color: gold;
+    transform: translate(0, 16px); }
+
 ul {
   width: 100%;
-  list-style: none;
+  list-style-type: none;
   display: flex;
-  padding: 0px;
+  flex-direction: column;
   margin: 0px;
-  justify-content: space-evenly; }
-
-li {
-  border: 1px solid #F2B705;
-  border-radius: 25px;
-  padding: .5em;
-  margin-right: .5em;
-  display: inline;
-  width: 160px;
-  height: 40%;
-  text-align: center; }
+  padding: 0px;
+  justify-content: center; }
+  ul > li {
+    text-decoration: none;
+    text-align: center;
+    margin: 0 10px;
+    margin-bottom: 10px; }
+    ul > li:first-child {
+      margin: 1em; }
+    ul > li:last-child {
+      margin-bottom: 1em; }
 
 a {
-  box-sizing: inherit;
-  text-decoration: none;
-  color: #F2B705; }
+  text-decoration: none; }
 
-li:hover {
-  box-shadow: 2px -1px 4px -1px #F2B705; }
+.navButton {
+  display: block;
+  width: 60%;
+  border: 2px solid #F2B705;
+  border-radius: 25px;
+  color: #F2B705;
+  padding: .25em;
+  margin: 0px auto; }
 
-header {
-  height: 15vh;
-  margin-top: 0px;
-  width: 100%;
-  background-color: #262626; }
+li .navButton:hover {
+  color: black;
+  box-shadow: 2px -2px 5px -2px #F2B705;
+  transform: scale(1.1);
+  font-size: 1.3  em;
+  font-weight: 450;
+  background: radial-gradient(circle, #fbd03f 0%, #f2bf29 100%); }
 
 h1 {
   height: 50%;
@@ -47,21 +154,19 @@ h1 {
   margin: auto;
   font-weight: 600; }
 
-nav {
-  display: flex;
-  height: 50%;
-  justify-content: center;
-  align-items: space-evenly; }
-
 .imgsvg {
   position: absolute;
   top: 20%; }
 
 /* 
 Color:
+logo:#daa51f
+
 #F2CB05
-#F2B705
-#F29F05
+#F2BF29
+#fbd03f
+F05 //color orange?
+radial-gradient: background: radial-gradient(circle, rgba(251,208,63,1) 0%, rgba(242,191,41,1) 100%);
 #F2F2F2
 #262626
 */
@@ -82,7 +187,7 @@ form {
   display: flex;
   flex-direction: column;
   min-width: 320px;
-  max-width: 400px;
+  max-width: 481px;
   top: 20vh;
   right: 0px; }
 
@@ -112,13 +217,18 @@ textarea.userData {
   resize: none;
   border-bottom: none; }
 
-.dogsize {
+.dogSizeCheckbox {
   display: flex;
+  flex-direction: row;
   width: 100%;
-  font-size: .0em; }
+  font-size: .75em;
+  margin-bottom: .5em;
+  justify-content: space-evenly; }
+  .dogSizeCheckbox > label > span {
+    align-items: center; }
 
-.sizeValue {
-  display: inline-block; }
+.sizeValue > {
+  color: #0c1c2b; }
 
 .inputValid {
   border-left: 0.5em solid #3d903d;
@@ -146,34 +256,77 @@ textarea.userData {
     right: -320px; } }
 
 /* input field */
-button {
-  position: relative;
-  min-height: 2em;
-  padding: 1em;
-  font-size: large;
-  background-color: #F2CB05;
-  border: 1px solid black; }
+/* form email button styles */
+section {
+  display: flex;
+  flex-direction: row; }
 
-button::before {
-  content: '';
+.slider {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  height: 50vh;
+  background-size: contain; }
+
+.slide {
+  display: none; }
+
+.activeSlide {
+  display: block; }
+
+i {
   display: inline-block;
-  height: 2px;
-  position: absolute;
-  top: 80%;
-  left: 35%;
-  text-align: center; }
-
-button:hover {
+  width: 12.5%;
+  height: inherit;
   background-color: #F2B705; }
 
-button:hover::before {
-  animation: buttonHover 1s forwards; }
+@media screen and (max-width: 481px) {
+  body {
+    display: flex;
+    flex-direction: column; }
+  #logo {
+    width: 100vw; } }
 
-@keyframes buttonHover {
+@media screen and (max-width: 320px) {
+  body {
+    display: flex;
+    flex-direction: column; }
+  #logo {
+    width: 100vw; } }
+
+section {
+  width: 100vw; }
+
+.beng .bar1 {
+  animation: reSpin 300ms cubic-bezier(0.8, 0, 0.2, 1) forwards; }
+
+.beng .bar2 {
+  animation: middleBarNonDisplay 300ms forwards; }
+
+.beng .bar3 {
+  animation: spin 300ms cubic-bezier(0.8, 0, 0.2, 1) forwards; }
+
+@keyframes middleBarNonDisplay {
   from {
-    width: 0%; }
+    opacity: 1; }
   to {
-    width: 30%;
-    background-color: #262626; } }
+    opacity: 0; } }
 
-/* form email button styles */
+@keyframes spin {
+  0% {
+    transform: translate(0px, -16px); }
+  50% {
+    transform: translate(0px, 0px); }
+  100% {
+    transform: rotate(45deg); } }
+
+@keyframes reSpin {
+  0% {
+    transform: translate(0px, 16px); }
+  50% {
+    transform: translate(0px, 0px); }
+  100% {
+    transform: rotate(-45deg); } }
+
+form {
+  display: none; }

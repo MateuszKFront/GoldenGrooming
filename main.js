@@ -69,19 +69,27 @@ function prevSlide() {
 // slider
 const linkUL = document.getElementById("linkList");
 const hamburger = document.querySelector("#hamburger");
+
 const setBtnState = document.querySelectorAll(".burger")
 let classes = linkUL.classList;
 hamburger.classList.add("beng");
+
+let countBar = 1;
 hamburger.addEventListener("click", () => {
-    let countBar = 1;
-    let result = classes.toggle("disappearContact");
+    let result = classes.toggle("bang");
     if (result) {
         console.log("Off");
         hamburger.classList.remove("beng");
+        hamburger.classList.add("bengShift");
+        [...setBtnState].forEach(element => {
+            element.classList.add(`bar${countBar++}`);
+        });
     }
     else {
         console.log("ON")
         hamburger.classList.add("beng");
+        hamburger.classList.remove("bengShift");
+        countBar = 1;
     }
 
     if (linkUL.style.display === "none") {
@@ -96,13 +104,6 @@ hamburger.addEventListener("click", () => {
     }
 })
 // navbarMenu button
-function contains(a, obj) {
-    for (var i = 0; i < a.length; i++) {
-        if (a[i] === obj) {
-            return true;
-        }
-    }
-    return false;
-}
 
+//Help imporve my code send feedback :)
 //does it nice ?

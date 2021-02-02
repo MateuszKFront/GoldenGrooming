@@ -1,15 +1,25 @@
 .beng { 
- & .bar1 {
-      animation: reSpin 300ms cubic-bezier(.8, 0, .2, 1) forwards;
+  & .bar1 {
+      animation: spin 600ms cubic-bezier(.8, 0, .2, 1) forwards;
   }
   & .bar2{
-      animation:  middleBarNonDisplay 300ms forwards;
+      animation:  middleBarNonDisplay 600ms forwards;
   }
   & .bar3 {
-      animation: spin 300ms cubic-bezier(.8, 0, .2, 1) forwards;
+      animation: reSpin 600ms cubic-bezier(.8, 0, .2, 1) forwards;
   }
-
-
+}
+.bengShift { 
+  & .bar1 {
+  animation: reSpin 600ms cubic-bezier(.8, 0, .2, 1) reverse forwards;
+  }
+  & .bar2{
+  animation:  middleBarNonDisplay 1000ms reverse forwards;
+  }
+  & .bar3 {
+  animation: spin 600ms cubic-bezier(.8, 0, .2, 1) reverse forwards;
+  }
+}
 @keyframes middleBarNonDisplay{
   from {
       opacity: 1;
@@ -21,21 +31,18 @@
   0% {
       transform: translate(0px, -16px);
   }
-  50% { transform: translate(0px, 0px);
-  }
+
   100% { 
-    transform: rotate(45deg); 
+    transform: rotate(-45deg); 
   }
 }
 @keyframes reSpin {
   0% { 
       transform: translate(0px, 16px);
   }
-  50% { 
-      transform: translate(0px, 0px);
-  }
+  
   100% { 
-      transform: rotate(-45deg); 
-  }
+      transform: rotate(45deg); 
   }
 }
+// SVG->better -> The BEST ...

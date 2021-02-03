@@ -1,0 +1,57 @@
+
+body {
+font-family: 'Revalia', cursive;
+margin: 0px;
+padding: 0px;
+background-color: #FBD03F;
+min-width: 320px;
+}
+.main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.errorNumber{
+    font-size: 5em;
+    margin: 0px;
+}
+.message {
+    font-size: 1.5em;
+}
+.toHomePage {
+    text-decoration: underline;
+    color: black;
+    font-size: 1em;
+    padding: 1.5em;
+}
+.paw {
+    position: relative;
+    margin-top: 5vh;
+    overflow: visible;
+}
+.shadow {
+    position: absolute;
+    transform-origin: 50% 50%;
+    animation: shadowAnim 2s ease alternate-reverse infinite;
+}
+.pawD {
+    animation: pawAnim 2s ease alternate-reverse infinite;
+}
+@keyframes pawAnim{
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-32px);
+    }
+}
+@keyframes shadowAnim{
+    form {
+        transform: scale(1.3);
+    }
+    to {
+        transform: scale(0.9);
+    }
+}

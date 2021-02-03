@@ -78,29 +78,20 @@ let countBar = 1;
 hamburger.addEventListener("click", () => {
     let result = classes.toggle("bang");
     if (result) {
-        console.log("Off");
+        // console.log("Off");
         hamburger.classList.remove("beng");
         hamburger.classList.add("bengShift");
         [...setBtnState].forEach(element => {
             element.classList.add(`bar${countBar++}`);
         });
+        linkUL.style.display = "none"
     }
     else {
-        console.log("ON")
+        // console.log("ON")
         hamburger.classList.add("beng");
         hamburger.classList.remove("bengShift");
         countBar = 1;
-    }
-
-    if (linkUL.style.display === "none") {
-        linkUL.classList.remove("disappearContact");
-        linkUL.classList.add("appearContact");
         linkUL.style = "";
-    }
-    else {
-        linkUL.classList.remove("appearContact");
-        linkUL.classList.add("disappearContact");
-        linkUL.style.display = "none";
     }
 })
 // navbarMenu button

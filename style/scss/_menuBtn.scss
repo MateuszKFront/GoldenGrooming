@@ -3,7 +3,7 @@
       animation: spin 600ms cubic-bezier(.8, 0, .2, 1) forwards;
   }
   & .bar2{
-      animation:  middleBarNonDisplay 600ms forwards;
+      animation:  middleBarNonDisplay 1600ms ease forwards;
   }
   & .bar3 {
       animation: reSpin 600ms cubic-bezier(.8, 0, .2, 1) forwards;
@@ -14,7 +14,7 @@
   animation: reSpin 600ms cubic-bezier(.8, 0, .2, 1) reverse forwards;
   }
   & .bar2{
-  animation:  middleBarNonDisplay 1000ms reverse forwards;
+  animation:  middleBarNonDisplay 700ms ease reverse forwards;
   }
   & .bar3 {
   animation: spin 600ms cubic-bezier(.8, 0, .2, 1) reverse forwards;
@@ -22,16 +22,21 @@
 }
 @keyframes middleBarNonDisplay{
   from {
+      transform: translateX(0px);
       opacity: 1;
-  }
+    }
   to { 
+      transform: translate(-58px);
       opacity: 0;}   
 }
+// Wrong display middle bar
 @keyframes spin {
   0% {
       transform: translate(0px, -16px);
   }
-
+  50% {
+    transform: translateY(0px);
+  }
   100% { 
     transform: rotate(-45deg); 
   }
@@ -40,7 +45,9 @@
   0% { 
       transform: translate(0px, 16px);
   }
-  
+  50% {
+    transform: translateY(0px);
+  }
   100% { 
       transform: rotate(45deg); 
   }

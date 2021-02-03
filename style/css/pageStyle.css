@@ -49,7 +49,7 @@ table {
   animation: spin 600ms cubic-bezier(0.8, 0, 0.2, 1) forwards; }
 
 .beng .bar2 {
-  animation: middleBarNonDisplay 600ms forwards; }
+  animation: middleBarNonDisplay 1600ms ease forwards; }
 
 .beng .bar3 {
   animation: reSpin 600ms cubic-bezier(0.8, 0, 0.2, 1) forwards; }
@@ -58,26 +58,32 @@ table {
   animation: reSpin 600ms cubic-bezier(0.8, 0, 0.2, 1) reverse forwards; }
 
 .bengShift .bar2 {
-  animation: middleBarNonDisplay 1000ms reverse forwards; }
+  animation: middleBarNonDisplay 700ms ease reverse forwards; }
 
 .bengShift .bar3 {
   animation: spin 600ms cubic-bezier(0.8, 0, 0.2, 1) reverse forwards; }
 
 @keyframes middleBarNonDisplay {
   from {
+    transform: translateX(0px);
     opacity: 1; }
   to {
+    transform: translate(-58px);
     opacity: 0; } }
 
 @keyframes spin {
   0% {
     transform: translate(0px, -16px); }
+  50% {
+    transform: translateY(0px); }
   100% {
     transform: rotate(-45deg); } }
 
 @keyframes reSpin {
   0% {
     transform: translate(0px, 16px); }
+  50% {
+    transform: translateY(0px); }
   100% {
     transform: rotate(45deg); } }
 
@@ -327,24 +333,49 @@ i {
   height: inherit;
   background-color: #F2B705; }
 
-@media screen and (min-width: 1000px) {
-  div#logo {
-    width: 35%;
-    height: 20vh; } }
-
-@media screen and (max-width: 481px) {
+@media screen and (min-width: 481px) {
   body {
     display: flex;
-    flex-direction: column; }
-  #logo {
-    width: 100vw; } }
+    flex-direction: column; } }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) {
   body {
     display: flex;
-    flex-direction: column; }
-  #logo {
-    width: 100vw; } }
+    flex-direction: column; } }
 
 section {
   width: 100vw; }
+
+@media screen and (min-width: 1025px) {
+  body {
+    display: flex;
+    flex-direction: column; }
+  #screenNavbar {
+    display: none; }
+  div#logo {
+    width: 35%;
+    height: 20vh; }
+  header {
+    display: flex; }
+    header > nav {
+      width: 65%;
+      height: 20vh; }
+      header > nav ul {
+        overflow: hidden;
+        flex-direction: row;
+        align-items: center; }
+        header > nav ul > li, header > nav ul li:first-child, header > nav ul li:last-child {
+          min-width: 150px;
+          margin: 0px; } }
+
+@media screen and (min-width: 1201px) {
+  body {
+    display: flex;
+    flex-direction: column; }
+  header > nav > ul {
+    justify-content: end; }
+    header > nav > ul > li, header > nav > ul li:first-child, header > nav > ul li:last-child {
+      place-self: center right; }
+      header > nav > ul > li a.navButton, header > nav > ul li:first-child a.navButton, header > nav > ul li:last-child a.navButton {
+        width: 80%;
+        margin: 0px; } }

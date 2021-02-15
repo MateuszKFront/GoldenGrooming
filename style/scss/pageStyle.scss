@@ -1,8 +1,8 @@
 @import "variables.scss";
 @import "_mixin.scss";
 @import "_styleReset.scss";
-@import "_media.scss";
 @import "_menuBtn.scss";
+@import "_navSlider.scss";
 
 *,*::after,*::before {box-sizing: inherit;
 };
@@ -12,26 +12,44 @@ html {
 }
 
 body {
+    width: 100%;
     margin: 0px;
     padding: 0px;
     font-size: 1rem;
     background-color: #383838;
     font-family: 'Oxygen', sans-serif;
-    position: relative;
 }
 
 header {
-    width: 100vw;
-    background-color: black;
+    width: 100%;
+    min-height: 20%;
+    //media for max height for better view
+    background-color: rgb(0, 0, 0);
     > #logo {
+        display: flex;
+        position: relative;
+        z-index: 2;
         width: 100%;
-        height: 20vh;
-        background: #000000 url(/style/css/logo.jpg) no-repeat center;
+        min-height: 110px;
         background-size: cover;
+        background-color: black;
+        & > h1 {
+            z-index: 2;
+            align-content: center;
+            & > .site__header--h1--href {
+                width: inherit;
+                height: inherit;
+                text-decoration: none;
+                color: #F2CB05;
+            } 
+        }
     }
     nav {
-        width: 100vw;
+        width: 100%;
         display: grid;
+        & > #screenNavbar {
+            z-index: 2;
+        }
         & div>button.listMenuDisplay {
             display: flex;
             place-items: center;
@@ -57,12 +75,23 @@ header {
         // Fixed menu navbar form mobile
     }
 }
+.site__header--logo--href {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.introduce {
+    padding: 1em 1.5em;
+    line-height: 1.5em;
+}
+
 .burger {
   width: 100%;
   height: 14.5%;
   border-radius: 25px;
   position: absolute;
-  background: rgba(0,0,0,.4);
+  background: rgba(0,0,0,.8);
 
     &:first-child {
         background-color: gold;
@@ -71,10 +100,11 @@ header {
         background-color: gold;
     }
     &:last-child {
-        background-color: red;
+        background-color: gold;
     }
 }
 ul {
+    max-height: 200px;
     width: 100%;
     list-style-type: none;
     display: flex;
@@ -276,7 +306,7 @@ form button:hover::before {
     }
 }
 /* form email button styles */
-section article.introduce{
+section > article.introduce{
     height: 50vh;
     background-color: #F2F2F2;
 }
@@ -300,51 +330,25 @@ i {
     background-color: #F2B705;
 }
 
-@include media($sizeTablet);
-@include media($sizePhone);
 section {
-    width: 100vw;
+    width: 100%;
 }
-// .linklist {
-//     display: none;
-// }
-@include media($sizeMedium){
-    #screenNavbar {
-        display: none;
-    }
-    div#logo {
-        width: 35%;
-        height: 20vh;
-    }
-    header {
-        display: flex;
-    & > nav {
-        width: 65%;
-        height: 20vh;
-        & ul {
-            overflow: hidden;
-            flex-direction: row;
-            align-items: center;
-            // line-height: 0.5em;
-//Bug ! - after closed nav.linkList from screenSize < tablet nav did't appear
-            & > li, li:first-child, li:last-child {
-                min-width: 150px;
-                margin: 0px;
-                }
-        }
-    }
+.card {
+max-width: 445.56px;
+min-width: 140px;
+overflow: hidden;
+position: relative;
+float: left;
+    .card__img::hover{
+        cursor: pointer;
+        transform: scale(1.4);     
     }
 }
-@include media($sizeLarge) {
-    header > nav > ul {
-        justify-content: end;
-    & > li,li:first-child, li:last-child  {
 
-        place-self: center right;
-        & a.navButton {
-            width: 80%;
-            margin: 0px;
-        }
-    }
-    }
-}//margin in a 
+img.card__img {
+    width: 100%;
+    margin: 0.5em;
+    object-fit: contain;
+}
+
+@import "_media.scss";

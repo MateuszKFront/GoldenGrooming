@@ -74,32 +74,50 @@ let classes = linkUL.classList;
 const hamburger = document.querySelector("#hamburger");
 
 const setBtnState = document.querySelectorAll(".burger")
-const iconBars = [...setBtnState];
 
 hamburger.classList.add("beng");
 // display animation fix ...
 let countBar = 1;
+let isPressed = false;
+
 hamburger.addEventListener("click", () => {
-    let result = classes.toggle("beng");
+    if (!isPressed) {
+        menuBar();
+    }
+})
+
+let result = 1;
+// navbarMenu button
+
+function menuBar() {
+    isPressed = true;
+
+    const iconBars = [...setBtnState];
     if (result) {
         hamburger.classList.remove("beng");
         iconBars.forEach(element => {
             element.classList.add(`bar${countBar++}`);
         });
         hamburger.classList.add("bengShift");
-        // classes.add("")
-        linkUL.style.display = "none"
+        classes.remove("linkList");
+        setTimeout(() => { classes.add("linkListHide") }, 100);
+        result = 0;
+        linkUL.style.opacity = "0";
+        setTimeout(() => { linkUL.style.display = "none" }, 350);
+
     }
     else {
         hamburger.classList.remove("bengShift");
         iconBars.forEach(element => {
             element.classList.remove(`bar${countBar--}`);
         });
+        // linkUL.style.animationDirection = "reverse";
+        classes.remove("linkListHide");
+        setTimeout(() => { classes.add("linkList") }, 100);
         hamburger.classList.add("beng");
-        linkUL.style = "";
+        linkUL.style.opacity = "0";
+        setTimeout(() => { linkUL.style = "" }, 350);
+        result = 1;
     }
-})
-// navbarMenu button
-
-//Help imporve my code send feedback :)
-
+    setTimeout(() => { isPressed = false; }, 900);
+}

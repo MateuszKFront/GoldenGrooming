@@ -1,24 +1,24 @@
 .beng { 
   & .bar1 {
-      animation: spin 600ms cubic-bezier(.8, 0, .2, 1) forwards;
+      animation: spin 400ms cubic-bezier(.8, 0, .2, 1) forwards;
   }
   & .bar2{
       // animation: middleBarHide 800ms ease forwards;
       display: none;
   }
   & .bar3 {
-      animation: reSpin 600ms cubic-bezier(.8, 0, .2, 1) forwards;
+      animation: reSpin 400ms cubic-bezier(.8, 0, .2, 1) forwards;
   }
 }
 .bengShift { 
   & .bar1 {
-  animation: reSpin 600ms cubic-bezier(.8, 0, .2, 1) reverse forwards;
+  animation: reSpin 400ms cubic-bezier(.8, 0, .2, 1) reverse forwards;
   }
   & .bar2{
-  animation:  middleBarShow 1000ms ease;
+  animation:  middleBarShow 400ms ease;
   }
   & .bar3 {
-  animation: spin 600ms cubic-bezier(.8, 0, .2, 1) reverse forwards;
+  animation: spin 400ms cubic-bezier(.8, 0, .2, 1) reverse forwards;
   }
 }
 @keyframes middleBarShow{

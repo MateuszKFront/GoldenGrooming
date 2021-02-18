@@ -166,10 +166,6 @@ header {
   height: 100%;
   cursor: pointer; }
 
-.introduce {
-  padding: 1em 1.5em;
-  line-height: 1.5em; }
-
 .burger {
   width: 100%;
   height: 14.5%;
@@ -240,9 +236,15 @@ radial-gradient: background: radial-gradient(circle, rgba(251,208,63,1) 0%, rgba
 */
 .appearFormButton {
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   right: 1em;
-  top: 92.5vh; }
+  top: 82.5vh;
+  background-color: #F2CB05; }
 
 form {
   position: fixed;
@@ -250,14 +252,19 @@ form {
   flex-direction: column;
   min-width: 320px;
   max-width: 481px;
-  top: 50vh;
-  right: 0px; }
+  top: 10vh;
+  right: 0px;
+  background-color: rgba(58, 58, 57, 0.7);
+  z-index: 5;
+  padding: 16px;
+  border-radius: 15px; }
 
 /* form field */
 label {
   display: block;
-  font-weight: 100;
-  margin-left: .25em; }
+  font-weight: 300;
+  margin-left: .25em;
+  color: #ddbc58; }
 
 input::placeholder {
   color: black; }
@@ -275,7 +282,7 @@ input::placeholder {
 textarea.userData {
   margin-bottom: 0px;
   font-family: inherit;
-  min-height: 4em;
+  min-height: 8em;
   resize: none;
   border-bottom: none; }
 
@@ -324,7 +331,9 @@ form button {
   padding: 1em;
   font-size: large;
   background-color: #F2CB05;
-  border: 1px solid black; }
+  border: 1px solid black;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px; }
 
 form button::before {
   content: '';
@@ -338,21 +347,7 @@ form button::before {
 form button:hover {
   background-color: #F2B705; }
 
-form button:hover::before {
-  animation: buttonHover 1s forwards; }
-
-@keyframes buttonHover {
-  from {
-    width: 0%; }
-  to {
-    width: 30%;
-    background-color: #262626; } }
-
 /* form email button styles */
-section > article.introduce {
-  height: 50vh;
-  background-color: #F2F2F2; }
-
 .slider {
   display: flex;
   justify-content: center;
@@ -484,7 +479,7 @@ img.card__img {
   display: block;
   min-height: 3.5rem;
   width: 100%;
-  position: fixed;
+  position: sticky;
   text-align: center;
   bottom: 0px;
   background-color: black;
@@ -498,3 +493,83 @@ img.card__img {
     margin: auto;
     border-bottom: 1px solid #F2B705;
     width: 50%; }
+
+.hellow {
+  color: #F2B705;
+  text-align: center;
+  font-size: 3.725em;
+  font-weight: 300;
+  padding: 1.9em;
+  line-height: 1.25em;
+  font-family: 'Monoton', cursive;
+  text-shadow: 1px 2px 5px #F2CB05;
+  position: relative;
+  word-spacing: 0.5em; }
+
+.hellow::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 300px;
+  background-color: yellow;
+  position: absolute;
+  transition: background-color 2s;
+  top: 75px;
+  opacity: 0.7;
+  left: 0px; }
+
+.hellowMessage {
+  margin-left: .5em;
+  padding: 1em;
+  font-size: 1.25em;
+  font-weight: 200;
+  line-height: 1.5;
+  color: #F2B705;
+  text-align: justify; }
+
+span.adnotation {
+  text-align: center;
+  color: white;
+  font-size: 1.125em;
+  padding: 1em auto .5em;
+  display: block; }
+
+section > article.introduce {
+  background-color: black;
+  min-height: 75vh; }
+
+.mail.icon {
+  color: #000;
+  position: absolute;
+  width: 17px;
+  height: 10px;
+  border-radius: 1px;
+  border: solid 1px currentColor;
+  transform: scale(2);
+  transform-origin: center center; }
+
+.mail.icon:before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: -4px;
+  width: 1px;
+  height: 10px;
+  background-color: currentColor;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+  -webkit-transform: rotate(-54deg);
+  transform: rotate(-54deg); }
+
+.mail.icon:after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: -4px;
+  width: 1px;
+  height: 10px;
+  background-color: currentColor;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+  -webkit-transform: rotate(54deg);
+  transform: rotate(54deg); }

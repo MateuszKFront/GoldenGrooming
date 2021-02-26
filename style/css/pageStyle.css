@@ -115,7 +115,7 @@ body {
 
 header {
   width: 100%;
-  min-height: 20%;
+  min-height: 20vh;
   background-color: black;
   box-shadow: 0px 3px 4px black; }
   header > #logo {
@@ -246,6 +246,12 @@ radial-gradient: background: radial-gradient(circle, rgba(251,208,63,1) 0%, rgba
   top: 82.5vh;
   background-color: #F2CB05; }
 
+.appearContact {
+  animation: makeFormAppear 400ms ease-in-out; }
+
+.disappearContact {
+  animation: makeFormDisappear 400ms ease-in-out forwards; }
+
 form {
   position: fixed;
   display: flex;
@@ -316,11 +322,12 @@ textarea.userData {
 @keyframes makeFormAppear {
   0% {
     right: -320px; }
-  50% { }
   100% {
     right: 0px; } }
 
 @keyframes makeFormDisappear {
+  from {
+    right: 0; }
   to {
     right: -320px; } }
 
@@ -479,7 +486,7 @@ img.card__img {
   display: block;
   min-height: 3.5rem;
   width: 100%;
-  position: sticky;
+  position: static;
   text-align: center;
   bottom: 0px;
   background-color: black;
@@ -497,7 +504,7 @@ img.card__img {
 .hellow {
   color: #F2B705;
   text-align: center;
-  font-size: 3.725em;
+  font-size: 2.725em;
   font-weight: 300;
   padding: 1.9em;
   line-height: 1.25em;
@@ -505,18 +512,6 @@ img.card__img {
   text-shadow: 1px 2px 5px #F2CB05;
   position: relative;
   word-spacing: 0.5em; }
-
-.hellow::after {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 300px;
-  background-color: yellow;
-  position: absolute;
-  transition: background-color 2s;
-  top: 75px;
-  opacity: 0.7;
-  left: 0px; }
 
 .hellowMessage {
   margin-left: .5em;
@@ -530,9 +525,10 @@ img.card__img {
 span.adnotation {
   text-align: center;
   color: white;
-  font-size: 1.125em;
-  padding: 1em auto .5em;
-  display: block; }
+  font-size: 1.425em;
+  padding: 1em 1em 3.5em .5em;
+  display: block;
+  line-height: 1.4; }
 
 section > article.introduce {
   background-color: black;
@@ -573,3 +569,7 @@ section > article.introduce {
   transform-origin: bottom;
   -webkit-transform: rotate(54deg);
   transform: rotate(54deg); }
+
+.spaceDog {
+  max-height: 500px;
+  float: left; }

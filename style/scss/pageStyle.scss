@@ -22,7 +22,7 @@ body {
 
 header {
     width: 100%;
-    min-height: 20%;
+    min-height: 20vh;
     //media for max height for better view
     background-color: rgb(0, 0, 0);
     box-shadow: 0px 3px 4px black;
@@ -188,12 +188,12 @@ radial-gradient: background: radial-gradient(circle, rgba(251,208,63,1) 0%, rgba
     top: 82.5vh;
     background-color: #F2CB05
 }
-                // .appearContact {
-                //     animation: 
-                // }
-                // .disappearContact {
-                //     animation: 
-                // }
+.appearContact {
+    animation: makeFormAppear 400ms ease-in-out ;
+}
+.disappearContact {
+    animation: makeFormDisappear 400ms ease-in-out forwards;
+}
 form {
     @include fixedForm;
     min-width: $sizePhone;
@@ -256,6 +256,7 @@ textarea.userData{
     border-left: 0.5em solid rgb(190, 65, 65) ;
     animation: validationMark .5s ease ;
 }
+
 @keyframes validationMark{
     from {
         border-left: 0em solid ;
@@ -268,14 +269,14 @@ textarea.userData{
     0% {
         right: -320px;
     }
-    50%{
-
-    }
-    100%{
+    100% {
         right: 0px;
     }
 };
 @keyframes makeFormDisappear {
+    from { 
+        right: 0;
+    }
     to {
         right: -320px;
     }
@@ -368,7 +369,7 @@ img.card__img {
 .hellow {
     color: #F2B705;
     text-align: center;
-    font-size: 3.725em;
+    font-size: 2.725em;
     font-weight: 300;
     padding: 1.9em;
     line-height: 1.25em;
@@ -378,18 +379,6 @@ img.card__img {
     word-spacing: 0.5em;
 }
 
-.hellow::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 300px;
-    background-color: yellow;
-    position: absolute;
-    transition: background-color 2s;
-    top:75px;
-    opacity: 0.7;
-    left:0px;
-}
 .hellowMessage {
     margin-left:.5em;
     padding: 1em;
@@ -403,9 +392,10 @@ img.card__img {
 span.adnotation {
     text-align: center;
     color: white;
-    font-size: 1.125em;
-    padding: 1em auto .5em;
+    font-size: 1.425em;
+    padding: 1em 1em 3.5em .5em;
     display: block;
+    line-height: 1.4;
 }
 section > article.introduce{
     background-color: black;
@@ -451,4 +441,8 @@ section > article.introduce{
             transform: rotate(54deg);
   }
   
-  
+.spaceDog {
+    max-height: 500px;
+    float: left;
+}
+

@@ -110,7 +110,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-size: 1rem;
-  background-color: #383838;
+  background-color: #858585;
   font-family: 'Oxygen', sans-serif; }
 
 header {
@@ -573,3 +573,74 @@ section > article.introduce {
 .spaceDog {
   max-height: 500px;
   float: left; }
+
+.priceTable__table--style tbody {
+  overflow: auto;
+  height: 100px; }
+
+.priceTable__header {
+  font-size: 1.225rem;
+  font-weight: 100px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 8px;
+  font-style: italic;
+  color: gold;
+  background-color: #202b35; }
+
+.priceTable {
+  width: 100%;
+  display: flexbox;
+  overflow-x: scroll; }
+
+.priceTable__table--style {
+  width: 100%; }
+
+.tableCel {
+  max-width: 20vw;
+  min-width: 30px;
+  min-height: 50px;
+  padding: 16px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold; }
+
+.tableCel__header {
+  font-size: 1.125rem;
+  color: #F2B705;
+  background-color: #202b35;
+  padding: 1em; }
+
+.tableRow__footer, .tableRow__header {
+  overflow-x: scroll;
+  width: 10%;
+  height: 100px; }
+
+.tableRow__footer {
+  width: 10vw; }
+  .tableRow__footer .tableCel__footerAnnotation {
+    font-family: 'Poppins', sans-serif;
+    color: #ddbc58;
+    background-color: #000;
+    text-align: center;
+    border-top: 2px solid #F2B705;
+    border-bottom: 1px solid black; }
+  .tableRow__footer .tableCel_footerInformation {
+    text-align: center;
+    color: #F2B705;
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    word-spacing: 3px;
+    border-bottom: 2px solid #F2B705;
+    border-left: 2px solid #F2B705; }
+
+.priceTable::-webkit-scrollbar {
+  width: 1em; }
+
+.priceTable::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+
+.priceTable::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey; }

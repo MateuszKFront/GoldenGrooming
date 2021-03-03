@@ -5,34 +5,39 @@ const nameValid = new RegExp(/^[A-Za-ząćęńłźżóŁ]{3,}\s+[A-Za-ząćęń�
 const phoneValid = new RegExp(/^(\(?(\+|00)?48\)?)?[ -]?[1-9]{1}\d{2}[ -]?\d{3}[ -]?\d{3}$/); // Polish phone number validator
 const emailValid = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 //Soon rebuild to function = return Object.RegExp.test(String( expression).toLowerCase()); 
-function dataValidation(inputBoolenValidator) {
-    if (!inputBoolenValidator) {
-        return false;
-    }
-    else return true;
-}
-function inputBoolenValidator(regexPattern, elementTarget) {
-    const domClassListArray = [...elementTarget.classList];
-    if (domClassListArray.length > 1) {
-        domClassListArray[1].pop();
-    }
-    if (regexPattern.test(elementTarget.value)) {
-        elementTarget.classList.remove("inputInvalid")
-        elementTarget.classList.add("inputValid");
-        return true;
-    }
-    else {
-        elementTarget.classList.add("inputInvalid");
-        return false;
-    }
-}
+// function dataValidation(inputBoolenValidator) {
+//     if (!inputBoolenValidator) {
+//         return false;
+//     }
+//     else return true;
+// }
+// function inputBoolenValidator(regexPattern, elementTarget) {
+//     const domClassListArray = [...elementTarget.classList];
+//     if (domClassListArray.length > 1) {
+//         domClassListArray[1].pop();
+//     }
+//     if (regexPattern.test(elementTarget.value)) {
+//         elementTarget.classList.remove("inputInvalid")
+//         elementTarget.classList.add("inputValid");
+//         return true;
+//     }
+//     else {
+//         elementTarget.classList.add("inputInvalid");
+//         return false;
+//     }
+// }
 //funtion valid user's input than check string is valid or invalid
 userNameInput.addEventListener("change", () => { inputBoolenValidator(nameValid, userNameInput) });
 userPhoneNumber.addEventListener("change", () => { inputBoolenValidator(phoneValid, userPhoneNumber) });
 userEmail.addEventListener("change", () => { inputBoolenValidator(emailValid, userEmail) });
+
 const formButton = document.querySelector("#sendMessage");
 formButton.addEventListener("click", (event) => {
     event.preventDefault();
+    if (!dataValidation) {
+        return false;
+    }
+    else return true;
 })
 // form validation
 const toContactForm = document.querySelector("#tocantackForm");
@@ -75,13 +80,9 @@ toContactForm.addEventListener("click", () => {
 // }
 // slider
 const linkUL = document.getElementById("linkList");
-
 let classes = linkUL.classList;
-
 const hamburger = document.querySelector("#hamburger");
-
 const setBtnState = document.querySelectorAll(".burger")
-
 hamburger.classList.add("beng");
 // display animation fix ...
 let countBar = 1;
@@ -92,10 +93,8 @@ hamburger.addEventListener("click", () => {
         menuBar();
     }
 })
-
 let result = 1;
 // navbarMenu button
-
 function menuBar() {
     isPressed = true;
 

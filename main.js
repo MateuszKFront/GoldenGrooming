@@ -1,32 +1,44 @@
 const userNameInput = document.querySelector("#name");
 const userPhoneNumber = document.querySelector("#phone");
+const userEmail = document.querySelector("#email")
 const nameValid = new RegExp(/^[A-Za-ząćęńłźżóŁ]{3,}\s+[A-Za-ząćęńłźżóŁŻ]{3,}$/, "m"); // first name and surname validator 
 const phoneValid = new RegExp(/^(\(?(\+|00)?48\)?)?[ -]?[1-9]{1}\d{2}[ -]?\d{3}[ -]?\d{3}$/); // Polish phone number validator
 const emailValid = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 //Soon rebuild to function = return Object.RegExp.test(String( expression).toLowerCase()); 
-function inputBoolenValidator(regexPattern, elementTarget) {
-    const domClassListArray = [...elementTarget.classList];
-    if (domClassListArray.length > 1) {
-        domClassListArray[1].pop();
-    }
-    if (regexPattern.test(elementTarget.value)) {
-        elementTarget.classList.remove("inputInvalid")
-        elementTarget.classList.add("inputValid");
-        return true;
-    }
-    else {
-        elementTarget.classList.add("inputInvalid");
+// function dataValidation(inputBoolenValidator) {
+//     if (!inputBoolenValidator) {
+//         return false;
+//     }
+//     else return true;
+// }
+// function inputBoolenValidator(regexPattern, elementTarget) {
+//     const domClassListArray = [...elementTarget.classList];
+//     if (domClassListArray.length > 1) {
+//         domClassListArray[1].pop();
+//     }
+//     if (regexPattern.test(elementTarget.value)) {
+//         elementTarget.classList.remove("inputInvalid")
+//         elementTarget.classList.add("inputValid");
+//         return true;
+//     }
+//     else {
+//         elementTarget.classList.add("inputInvalid");
+//         return false;
+//     }
+// }
+//funtion valid user's input than check string is valid or invalid
+userNameInput.addEventListener("change", () => { inputBoolenValidator(nameValid, userNameInput) });
+userPhoneNumber.addEventListener("change", () => { inputBoolenValidator(phoneValid, userPhoneNumber) });
+userEmail.addEventListener("change", () => { inputBoolenValidator(emailValid, userEmail) });
+
+const formButton = document.querySelector("#sendMessage");
+formButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (!dataValidation) {
         return false;
     }
-}
-//funtion valid user's input than check string is valid or invalid
-// userNameInput.addEventListener("change", () => { inputBoolenValidator(nameValid, userNameInput) });
-// userPhoneNumber.addEventListener("change", () => { inputBoolenValidator(phoneValid, userPhoneNumber) });
-//
-// const formButton = document.querySelector("#sendMessage");
-// formButton.addEventListener("click", (event) => {
-//     event.preventDefault();
-// })
+    else return true;
+})
 // form validation
 const toContactForm = document.querySelector("#tocantackForm");
 toContactForm.addEventListener("click", () => {
@@ -39,7 +51,7 @@ toContactForm.addEventListener("click", () => {
     else {
         contactForm.classList.remove("appearContact");
         contactForm.classList.add("disappearContact");
-        setTimeout(() => contactForm.style.display = "none", 1000);
+        setTimeout(() => contactForm.style.display = "none", 700);
     }
 })
 // to appear and disappear contact form
@@ -68,13 +80,9 @@ toContactForm.addEventListener("click", () => {
 // }
 // slider
 const linkUL = document.getElementById("linkList");
-
 let classes = linkUL.classList;
-
 const hamburger = document.querySelector("#hamburger");
-
 const setBtnState = document.querySelectorAll(".burger")
-
 hamburger.classList.add("beng");
 // display animation fix ...
 let countBar = 1;
@@ -85,10 +93,8 @@ hamburger.addEventListener("click", () => {
         menuBar();
     }
 })
-
 let result = 1;
 // navbarMenu button
-
 function menuBar() {
     isPressed = true;
 

@@ -15,30 +15,34 @@
 </head>
 
 <body>
-    <header>
-        <div id="logo"><a href="/index.html" alt="home page" class="site__header--logo--href"></a>
-            <h1 class="site__header--h1--logo"> <a href="/index.html" alt="home page" class="site__header--h1--href">
-                    GOLDEN GROOMING </a></h1>
-        </div>
-        <nav>
-            <div id='screenNavbar'>
-                <button id="hamburger" class="listMenuDisplay beng">
-                    <div class="burger bar1"></div>
-                    <div class="burger bar2"></div>
-                    <div class="burger bar3"></div>
-                </button>
-            </div>
-            <ul id="linkList" class="linkList">
-                <li class="menu__item"><a href="/omnie/index.html" class="navButton">O mnie</a></li>
-                <li class="menu__item"><a href="/cennik/index.html" class="navButton">Cennik</a></li>
-                <li class="menu__item"><a href="zdjecia/index.html" class="navButton">Psiaki</a></li>
-                <li class="menu__item"><a href="/kontakt/" class="navButton">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+
     <section>
+        <header>
+            <div id="logo"><a href="/index.html" alt="home page" class="site__header--logo--href"></a>
+                <h1 class="site__header--h1--logo"> <a href="/index.html" alt="home page"
+                        class="site__header--h1--href">
+                        GOLDEN GROOMING </a></h1>
+            </div>
+            <nav>
+                <div id='screenNavbar'>
+                    <button id="hamburger" class="listMenuDisplay beng">
+                        <div class="burger bar1"></div>
+                        <div class="burger bar2"></div>
+                        <div class="burger bar3"></div>
+                    </button>
+                </div>
+                <ul id="linkList" class="linkList">
+                    <li class="menu__item"><a href="/omnie/index.html" class="navButton">O mnie</a></li>
+                    <li class="menu__item"><a href="/cennik/index.html" class="navButton">Cennik</a></li>
+                    <li class="menu__item"><a href="/zdjecia/index.html" class="navButton">Psiaki</a></li>
+                    <li class="menu__item"><a href="/kontakt/" class="navButton">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
         <article class="introduce">
-            <h1 class="hellow">Mam na imie Klaudia,<br /> jestem certyfikowanym groomerem</h1>
+            <img src="/spaceDog.svg" class="spaceDog" />
+            <h1 class="hellow">Mam na imie Klaudia,<br /> jestem
+                certyfikowanym groomerem</h1>
             <p class="hellowMessage">Wasze pieski potrzebują odświeżenia? Twój pupil uwielbia błotne kąpiele?<br />
                 U Nas Wasze pociechy będą:<br />
                 -wykąpane w środkach najlepszej jakości<br />
@@ -55,6 +59,8 @@
 
     <button id="tocantackForm" class="appearFormButton"><span class="mail icon"></span></button>
     <form id="contact" action="return dataValidation" class="contact" style="display: none;">
+        <!-- <fieldset> -->
+        <legend>Napisz już teraz</legend>
         <label for="name">Podaj swoje imię:</label>
         <input id="name" placeholder="Imię Nazwisko" type="text" class="userData" />
         <label for="phone"> Telefon komórkowy</label>
@@ -62,16 +68,19 @@
         <label for="email"> E-mail:</label>
         <input id="email" placeholder="Mail@example.com" type="email" class="userData" />
         <div class="dogSizeCheckbox">
-            <label for="sizes">
-                <input id="sizes" type="checkbox" class="sizeValue" value="S" />
-                <span>S size</span></label>
-            <label for="sizem">
-                <input id="sizem" type="checkbox" class="sizeValue" value="M" />
-                <span>M size</span></label>
+            <input id="sizes" type="radio" class="sizeValue" name="sizeOfDog" value="S" checked />
+            <span>S size</span>
+            <input id="sizem" type="radio" class="sizeValue" name="sizeOfDog" value="M" />
+            <span>M size</span>
         </div>
         <textarea id=" message" key="" type="text" class="userData"> </textarea>
         <button id="sendMessage">Wyślij</button>
+        <!-- </fieldset> -->
     </form>
+    <section class="price">
+        <h2>Cena za usługi brutto</h2>
+
+    </section>
     <!-- <section>
         <i id="prev"></i>
         <div id="slider" class="slider">
@@ -83,7 +92,7 @@
     </section> -->
     <footer class="footer">
         <p>copyright All right reserved</p>
-        <span>Created by Mateusz Kłonica</span>
+        <span>Created for GoldenGrooming</span>
     </footer>
 
     <script src="main.js"></script>

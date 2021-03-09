@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik</title>
+    <link rel="stylesheet" href="../style/css/pageStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div id="logo"><a href="/index.html" alt="home page" class="site__header--logo--href"></a>
+                <h1 class="site__header--h1--logo"> <a href="/index.html" alt="home page"
+                        class="site__header--h1--href">
+                        GOLDEN GROOMING </a></h1>
+            </div>
+            <nav>
+                <div id='screenNavbar'>
+                    <button id="hamburger" class="listMenuDisplay beng">
+                        <div class="burger bar1"></div>
+                        <div class="burger bar2"></div>
+                        <div class="burger bar3"></div>
+                    </button>
+                </div>
+                <ul id="linkList" class="linkList">
+                    <li class="menu__item"><a href="/omnie/index.html" class="navButton">O mnie</a></li>
+                    <li class="menu__item"><a href="/cennik/index.html" class="navButton">Cennik</a></li>
+                    <li class="menu__item"><a href="/zdjecia/index.html" class="navButton">Psiaki</a></li>
+                    <li class="menu__item"><a href="/kontakt/" class="navButton">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="priceTable">
+            <h1 class="priceTable__header">Tabela przedstawia poszczególne ceny za oferowane usługi</h1>
+            <table id="priceTable__tableId" class="priceTable__table--style">
+                <tr class="tableRow__header">
+                    <td class="tableCel__header">GOLDEN GROOMING</td>
+                    <td class="tableCel__header">CZESANIE I STZRYŻENIE</td>
+                    <td class="tableCel__header">KĄPIEL</td>
+                    <td class="tableCel__header">CAŁY KOMPLET</td>
+                    <td class="tableCel__header">TRYMOWANIE</td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCel">Miniaturki do 3kg</td>
+                    <td class="tableCel">70 Zł</td>
+                    <td class="tableCel">40 Zł</td>
+                    <td class="tableCel">90 Zł</td>
+                    <td class="tableCel">100-150 Zł</td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCel">Malutkie psiaki do 6kg</td>
+                    <td class="tableCel">80 Zł</td>
+                    <td class="tableCel">50 Zł</td>
+                    <td class="tableCel">100 Zł</td>
+                    <td class="tableCel">150-200 Zł</td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCel">Duże pieski do 20kg</td>
+                    <td class="tableCel">90 Zł</td>
+                    <td class="tableCel">60 Zł</td>
+                    <td class="tableCel">120 Zł</td>
+                    <td class="tableCel">200-250 Zł</td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCel">Pieki powyżej 20kg <strong>Czytaj więcej*</strong></td>
+                    <td class="tableCel">Od 110 Zł</td>
+                    <td class="tableCel">Od 80 Zł</td>
+                    <td class="tableCel">Od 170 Zł</td>
+                    <td class="tableCel">Od 220 Zł</td>
+                </tr>
+                <tr class="tableRow__footer">
+                    <td class="tableCel__footerAnnotation" colspan="2">I WIZYTA SZCZENIACZKA - 50%
+                        </br>PIERWSZA WIZYTA - 10%</td>
+                    <td class="tableCel_footerInformation" colspan="3">JEŻELI SIERŚĆ PSA JEST SKOŁTUNIONA I SFILCOWANA
+                        DOPŁATA
+                        DO USŁUGO 20 ZŁ ZA KAŻDA 30MIN PRACY TAK SAMO JAK PIESEK NIE WPSÓŁPRACUJE
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <button id="tocantackForm" class="appearFormButton"><span class="mail icon"></span></button>
+        <form id="contact" action="return dataValidation" class="contact" style="display: none;">
+            <!-- <fieldset> -->
+            <legend>Napisz już teraz</legend>
+            <label for="name">Podaj swoje imię:</label>
+            <input id="name" placeholder="Imię Nazwisko" type="text" class="userData" />
+            <label for="phone"> Telefon komórkowy</label>
+            <input id="phone" placeholder="+48" type="tel" class="userData" />
+            <label for="email"> E-mail:</label>
+            <input id="email" placeholder="Mail@example.com" type="email" class="userData" />
+            <div class="dogSizeCheckbox">
+                <input id="sizes" type="radio" class="sizeValue" name="sizeOfDog" value="S" checked />
+                <span>S size</span>
+                <input id="sizem" type="radio" class="sizeValue" name="sizeOfDog" value="M" />
+                <span>M size</span>
+            </div>
+            <textarea id=" message" key="" type="text" class="userData"> </textarea>
+            <button id="sendMessage">Wyślij</button>
+            <!-- </fieldset> -->
+        </form>
+        <footer class="footer">info</footer>
+    </main>
+    <script src="/main.js"></script>
+</body>
+
+</html>

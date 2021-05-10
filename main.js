@@ -87,13 +87,23 @@ hamburger.classList.add("beng");
 // display animation fix ...
 let countBar = 1;
 let isPressed = false;
-
 hamburger.addEventListener("click", () => {
     if (!isPressed) {
         menuBar();
     }
 })
 let result = 1;
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) {
+        result = 0;
+        countBar = 1;
+        [...setBtnState].forEach(element => {
+            element.classList = `burger bar${countBar++}`;
+        })
+        //div's bars classes default reset
+        setTimeout(menuBar(), 300);
+    }
+}, true);
 // navbarMenu button
 function menuBar() {
     isPressed = true;
@@ -107,10 +117,9 @@ function menuBar() {
         hamburger.classList.add("bengShift");
         classes.remove("linkList");
         setTimeout(() => { classes.add("linkListHide") }, 100);
-        result = 0;
         linkUL.style.opacity = "0";
         setTimeout(() => { linkUL.style.display = "none" }, 350);
-
+        result = 0;
     }
     else {
         hamburger.classList.remove("bengShift");
@@ -125,5 +134,17 @@ function menuBar() {
         setTimeout(() => { linkUL.style = "" }, 350);
         result = 1;
     }
-    setTimeout(() => { isPressed = false; }, 900);
+    setTimeout(() => { isPressed = false; }, 500);
 }
+const phoneIcon = document.querySelector("#callMe");
+const phoneNum = document.querySelector("#phoneNumber");
+phoneIcon.addEventListener("click", () => {
+    phoneNum.style.opacity = "1";
+})
+
+// const img = document.querySelector(".spaceDog");
+// const imgpath = document.querySelector(".introduce");
+// let newimg = imgpath.appendChild(img.cloneNode(true));
+// // imgClone.style.transformY = "150px";
+
+// cloneNode

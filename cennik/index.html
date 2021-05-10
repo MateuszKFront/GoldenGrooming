@@ -16,9 +16,8 @@
 <body>
     <main>
         <header>
-            <div id="logo"><a href="/index.html" alt="home page" class="site__header--logo--href"></a>
-                <h1 class="site__header--h1--logo"> <a href="/index.html" alt="home page"
-                        class="site__header--h1--href">
+            <div id="logo"><a href="/index.html" class=" site__header--logo--href"></a>
+                <h1 class="site__header--h1--logo"> <a href="/index.html" class=" site__header--h1--href">
                         GOLDEN GROOMING </a></h1>
             </div>
             <nav>
@@ -31,14 +30,15 @@
                 </div>
                 <ul id="linkList" class="linkList">
                     <li class="menu__item"><a href="/omnie/index.html" class="navButton">O mnie</a></li>
-                    <li class="menu__item"><a href="/cennik/index.html" class="navButton">Cennik</a></li>
+                    <li class="menu__item"><a href="/cennik/index.html" class="navButton menu__item--active">Cennik</a>
+                    </li>
                     <li class="menu__item"><a href="/zdjecia/index.html" class="navButton">Psiaki</a></li>
                     <li class="menu__item"><a href="/kontakt/" class="navButton">Kontakt</a></li>
                 </ul>
             </nav>
         </header>
         <section class="priceTable">
-            <h1 class="priceTable__header">Tabela przedstawia poszczególne ceny za oferowane usługi</h1>
+            <header class="priceTable__header">Tabela przedstawia poszczególne ceny za oferowane usługi</header>
             <table id="priceTable__tableId" class="priceTable__table--style">
                 <tr class="tableRow__header">
                     <td class="tableCel__header">GOLDEN GROOMING</td>
@@ -101,7 +101,7 @@
                 <input id="sizem" type="radio" class="sizeValue" name="sizeOfDog" value="M" />
                 <span>M size</span>
             </div>
-            <textarea id=" message" key="" type="text" class="userData"> </textarea>
+            <textarea id="message" key="" type="text" class="userData"> </textarea>
             <button id="sendMessage">Wyślij</button>
             <!-- </fieldset> -->
         </form>

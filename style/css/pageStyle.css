@@ -110,8 +110,11 @@ body {
   margin: 0px;
   padding: 0px;
   font-size: 1rem;
-  background-color: #858585;
+  background-color: #F2B705;
   font-family: 'Oxygen', sans-serif; }
+
+body::-webkit-scrollbar {
+  display: none; }
 
 header {
   width: 100%;
@@ -123,21 +126,22 @@ header {
     position: relative;
     z-index: 2;
     width: 100%;
-    min-height: 110px;
+    min-height: 120px;
     background-size: cover;
     background-color: black; }
     header > #logo > h1 {
       z-index: 2;
       align-content: center;
-      text-shadow: 2px 1px 20px #F2B705; }
+      text-shadow: 2px 1px 10px #F2B705; }
       header > #logo > h1 > .site__header--h1--href {
         width: inherit;
-        height: inherit;
+        font-size: 2.5rem;
         text-decoration: none;
         color: #F2CB05; }
   header nav {
     width: 100%;
-    display: grid; }
+    display: grid;
+    position: relative; }
     header nav > #screenNavbar {
       z-index: 2; }
     header nav div > button.listMenuDisplay {
@@ -152,10 +156,13 @@ header {
       padding: 0px;
       padding-top: 0px;
       margin: 0px .5em auto 0.5em;
-      outline: none; }
+      outline: none;
+      cursor: pointer; }
       header nav div > button.listMenuDisplay div {
         background-color: #F2B705;
         margin-bottom: 0px; }
+      header nav div > button.listMenuDisplay:focus {
+        outline: 1px dotted gold; }
     header nav div {
       height: 50px;
       background-color: black; }
@@ -177,7 +184,7 @@ header {
   .burger:nth-child(2) {
     background-color: gold; }
   .burger:last-child {
-    background-color: gold; }
+    background-color: #ffd700; }
 
 ul {
   max-height: 200px;
@@ -204,23 +211,32 @@ a {
 .navButton {
   display: block;
   width: 60%;
+  cursor: pointer;
   border: 2px solid #F2B705;
   border-radius: 25px;
   color: #F2B705;
   padding: .25em;
-  margin: 0px auto; }
+  margin: .250em auto;
+  text-shadow: 0 0 0.45em #f0b505;
+  box-shadow: 0 0 0.5em #f0b505; }
 
 li .navButton:hover {
   color: black;
   box-shadow: 2px -2px 5px -2px #F2B705;
   transform: scale(1.1);
-  font-size: 1.3  em;
+  font-size: 1.125em;
   font-weight: 450;
-  background: radial-gradient(circle, #fbd03f 0%, #f2bf29 100%); }
+  background: #F2B705; }
+
+.menu__item--active {
+  transform: scale(1.1);
+  color: black;
+  background-color: #F2B705; }
 
 .imgsvg {
-  position: absolute;
-  top: 20%; }
+  position: relative;
+  top: 20%;
+  left: 55vw; }
 
 /* 
 Color:
@@ -374,11 +390,11 @@ i {
   height: inherit;
   background-color: #F2B705; }
 
-section {
+main {
   width: 100%; }
 
 .card {
-  max-width: 445.56px;
+  max-width: max-content;
   min-width: 140px;
   overflow: hidden;
   position: relative;
@@ -389,11 +405,10 @@ section {
 
 img.card__img {
   width: 100%;
-  margin: 0.5em;
   object-fit: contain; }
 
 #linkList {
-  transition: all 300ms linear; }
+  transition: opacity 300ms linear; }
 
 @media screen and (max-width: 370px) {
   header > div#logo {
@@ -403,9 +418,21 @@ img.card__img {
       min-height: 110px;
       background: #000000 url("/style/css/logo.jpg") no-repeat center;
       background-size: cover;
-      background-position: 0px -30px; }
+      background-position: 0px -10px; }
     header > div#logo > h1.site__header--h1--logo {
-      display: none; } }
+      display: none; }
+  .span__h1--title {
+    color: gold;
+    font-family: 'Monoton', cursive;
+    font-size: 1.28em;
+    text-align: left;
+    padding: 0px;
+    display: block;
+    line-height: 1.75;
+    transition: opacity 2s,transform 2s; }
+  .span__h1--title:hover {
+    opacity: 0;
+    transform: scale(1.25); } }
 
 @media screen and (min-width: 370px) and (max-width: 480px) {
   header div#logo > a.site__header--logo--href {
@@ -439,7 +466,9 @@ img.card__img {
       header > nav > ul li a, header > nav > ul li:first-child a, header > nav > ul li:last-child a {
         min-width: 110px;
         width: 75%;
-        margin: auto; } }
+        margin: auto; }
+  div.card {
+    max-width: 50vw; } }
 
 @media screen and (min-width: 1025px) {
   header {
@@ -451,36 +480,52 @@ img.card__img {
         max-width: 100%;
         background: #000000 url("/style/css/logo.jpg") no-repeat center;
         background-size: cover;
-        display: block; }
+        display: block;
+        background-position-y: -30px; }
       header > #logo > .site__header--h1--logo {
         display: none;
         place-items: center; }
     header > nav {
       width: 65%; }
+      header > nav > #screenNavbar {
+        display: none; }
       header > nav ul {
         align-items: center;
         align-self: center; }
         header > nav ul > li, header > nav ul li:first-child, header > nav ul li:last-child {
           max-width: 150px;
-          margin: 0px; } }
+          margin: 0px; }
+  div.card {
+    max-width: 33vw;
+    margin-left: 3px; }
+  .hellow {
+    height: 75vh; }
+    .hellow .span__h1--title {
+      font-size: 5rem;
+      line-height: 5;
+      display: inline-block; } }
 
 @media screen and (min-width: 1201px) {
-  header > {
+  header {
     max-height: 35vh; }
-    header > > div#logo > a.site__header--logo--href {
+    header > div#logo > a.site__header--logo--href {
       background-position: 0px 15px;
-      display: block; }
-    header > nav > ul {
+      display: block;
+      background-position-y: -50px; }
+    header nav > #screenNavbar {
+      display: none; }
+    header nav > ul {
       align-self: center;
       justify-content: flex-end; }
-      header > nav > ul > li, header > nav > ul li:first-child, header > nav > ul li:last-child {
+      header nav > ul > li, header nav > ul li:first-child, header nav > ul li:last-child {
         justify-self: stretch;
         place-self: center right; }
-        header > nav > ul > li a.navButton, header > nav > ul li:first-child a.navButton, header > nav > ul li:last-child a.navButton {
+        header nav > ul > li a.navButton, header nav > ul li:first-child a.navButton, header nav > ul li:last-child a.navButton {
           width: 80%;
           margin: 0px; }
-    header > section > article > div.card {
-      width: 33%; } }
+    header main > article > div.card {
+      max-width: 33%;
+      margin-left: 3px; } }
 
 .footer {
   display: block;
@@ -489,7 +534,7 @@ img.card__img {
   position: static;
   text-align: center;
   bottom: 0px;
-  background-color: black;
+  background: radial-gradient(circle, black 0%, gold 100%);
   color: #F2B705;
   padding-top: .5em; }
   .footer span {
@@ -504,11 +549,11 @@ img.card__img {
 .hellow {
   color: #F2B705;
   text-align: center;
-  font-size: 2.725em;
-  font-weight: 300;
-  padding: 1.9em;
+  font-size: 1.50em;
+  font-weight: 100;
+  padding: 0.5em;
   line-height: 1.25em;
-  font-family: 'Monoton', cursive;
+  font-family: 'Monoton', san-serif;
   text-shadow: 1px 2px 5px #F2CB05;
   position: relative;
   word-spacing: 0.5em; }
@@ -530,9 +575,12 @@ span.adnotation {
   display: block;
   line-height: 1.4; }
 
-section > article.introduce {
-  background-color: black;
+main > article.introduce {
+  background-color: #010101;
   min-height: 75vh; }
+
+article.colar {
+  width: 100vw; }
 
 .mail.icon {
   color: #000;
@@ -571,22 +619,24 @@ section > article.introduce {
   transform: rotate(54deg); }
 
 .spaceDog {
-  max-height: 500px;
-  float: left; }
+  max-height: 50px;
+  position: absolute; }
 
 .priceTable__table--style tbody {
   overflow: auto;
   height: 100px; }
 
 .priceTable__header {
-  font-size: 1.225rem;
+  font-size: 1.125rem;
   font-weight: 100px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   padding: 8px;
-  font-style: italic;
+  line-height: 2em;
+  font-style: bold;
   color: gold;
-  background-color: #202b35; }
+  background-color: #202b35;
+  text-shadow: #000 4px 4px 3px; }
 
 .priceTable {
   width: 100%;
@@ -597,10 +647,11 @@ section > article.introduce {
   width: 100%; }
 
 .tableCel {
-  max-width: 20vw;
+  border: #0c1c2b 1px solid;
+  max-width: 50vw;
   min-width: 30px;
-  min-height: 50px;
-  padding: 16px;
+  min-height: 90px;
+  padding: 4em;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-weight: bold; }
@@ -644,3 +695,15 @@ section > article.introduce {
 .priceTable::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey; }
+
+#phoneNumber {
+  line-height: 50px;
+  color: #F2B705;
+  transition: opacity 1000ms;
+  opacity: 0; }
+
+#callMe:focus {
+  outline: 1px dotted gold; }
+
+#callMe:hover {
+  border-bottom: 3px solid #858585; }

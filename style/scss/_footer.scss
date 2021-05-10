@@ -1,0 +1,25 @@
+.footer {
+    display: block;
+    min-height: 3.5rem;
+    width: 100%;
+    position: static;
+    text-align: center;
+    bottom: 0px;
+    background: radial-gradient(circle,  rgba(0,0,0,1) 0%, gold 100%);
+    // background: white url(/assetsMain/hodgepodge.png) ;
+    color: $buttonColor;
+    padding-top: .5em ;
+    // border-top-left-radius: 15px;
+    // border-top-right-radius: 15px;
+    // box-shadow: 0px -3px 4px black;
+    span {
+    display: inline-block;
+    font-size: x-small;
+    width: 100%;
+    }
+    p{
+    margin: auto;
+    border-bottom: 1px solid $buttonColor;
+    width: 50%;
+    }
+}

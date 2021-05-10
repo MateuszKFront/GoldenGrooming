@@ -16,7 +16,7 @@
 
 <body>
 
-    <section>
+    <main>
         <header>
             <div id="logo"><a href="/index.html" alt="home page" class="site__header--logo--href"></a>
                 <h1 class="site__header--h1--logo"> <a href="/index.html" alt="home page"
@@ -25,6 +25,15 @@
             </div>
             <nav>
                 <div id='screenNavbar'>
+                    <a id="callMe" class="listMenuDisplay" style="float: left; margin-left: 8px;" href="tel:666344693">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"
+                            style="fill: gold;">
+                            <path
+                                d="M17.707,12.293c-0.391-0.391-1.023-0.391-1.414,0l-1.594,1.594c-0.739-0.22-2.118-0.72-2.992-1.594 s-1.374-2.253-1.594-2.992l1.594-1.594c0.391-0.391,0.391-1.023,0-1.414l-4-4c-0.391-0.391-1.023-0.391-1.414,0L3.581,5.005 c-0.38,0.38-0.594,0.902-0.586,1.435c0.023,1.424,0.4,6.37,4.298,10.268s8.844,4.274,10.269,4.298c0.005,0,0.023,0,0.028,0 c0.528,0,1.027-0.208,1.405-0.586l2.712-2.712c0.391-0.391,0.391-1.023,0-1.414L17.707,12.293z M17.58,19.005 c-1.248-0.021-5.518-0.356-8.873-3.712c-3.366-3.366-3.692-7.651-3.712-8.874L7,4.414L9.586,7L8.293,8.293 C8.054,8.531,7.952,8.875,8.021,9.205c0.024,0.115,0.611,2.842,2.271,4.502s4.387,2.247,4.502,2.271 c0.333,0.071,0.674-0.032,0.912-0.271L17,14.414L19.586,17L17.58,19.005z">
+                            </path>
+                        </svg>
+                    </a>
+                    <span id="phoneNumber">+48 666-344-693</span>
                     <button id="hamburger" class="listMenuDisplay beng">
                         <div class="burger bar1"></div>
                         <div class="burger bar2"></div>
@@ -32,7 +41,8 @@
                     </button>
                 </div>
                 <ul id="linkList" class="linkList">
-                    <li class="menu__item"><a href="/omnie/index.html" class="navButton">O mnie</a></li>
+                    <li class="menu__item"><a href="/omnie/index.html" class="navButton menu__item--active">O mnie</a>
+                    </li>
                     <li class="menu__item"><a href="/cennik/index.html" class="navButton">Cennik</a></li>
                     <li class="menu__item"><a href="/zdjecia/index.html" class="navButton">Psiaki</a></li>
                     <li class="menu__item"><a href="/kontakt/" class="navButton">Kontakt</a></li>
@@ -40,20 +50,22 @@
             </nav>
         </header>
         <article class="introduce">
-            <img src="/spaceDog.svg" class="spaceDog" />
-            <h1 class="hellow">Mam na imie Klaudia,<br /> jestem
-                certyfikowanym groomerem</h1>
+            <!-- <img src="/paw.svg" class="spaceDog" /> -->
+            <h1 class="hellow">
+                <span class="span__h1--title">Psi fryzjer</samp>
+            </h1>
             <p class="hellowMessage">Wasze pieski potrzebują odświeżenia? Twój pupil uwielbia błotne kąpiele?<br />
                 U Nas Wasze pociechy będą:<br />
                 -wykąpane w środkach najlepszej jakości<br />
                 -wyczesane przez profesjonalna psią fryzjerkę<br />
                 -obsługiwane z najwiekszą czujnością i starannością
             </p>
-            <span class="adnotation">U nas w Salonie zadbamy o waszych czworonożnych przyjaciół najlepiej jak
+            <p class="adnotation">U nas w Salonie zadbamy o waszych czworonożnych przyjaciół najlepiej jak
                 potrafimy.<br />
-                Każdy piesek będzie traktowany przez nas indywidualnie i z wielką miłością. </span>
+                Każdy piesek będzie traktowany przez nas indywidualnie i z wielką miłością. </p>
+
         </article>
-    </section>
+    </main>
     <!-- <path fill="none" stroke="deeppink" stroke-width="14" stroke-miterlimit="0" d="" />
     </svg> -->
 
@@ -73,13 +85,18 @@
             <input id="sizem" type="radio" class="sizeValue" name="sizeOfDog" value="M" />
             <span>M size</span>
         </div>
-        <textarea id=" message" key="" type="text" class="userData"> </textarea>
+        <textarea id="message" key="" type="text" class="userData"> </textarea>
         <button id="sendMessage">Wyślij</button>
         <!-- </fieldset> -->
     </form>
-    <section class="price">
-        <h2>Cena za usługi brutto</h2>
-
+    <section class="">
+        Jakakolwiek sekcja z napisem i zdjęciem
+        <div class="localView"><img src="assetsMain/sittingdog.svg" alt="dog" height="232" />
+        </div>
+        <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos omnis reiciendis officia amet temporibus
+            maxime aliquid dignissimos animi tempora? Tempore velit odit iste debitis quam unde perspiciatis sint
+            suscipit consequatur.</article>
+        <img src="/assetsMain/stangingDog.svg" alt="standing dog" height="232">
     </section>
     <!-- <section>
         <i id="prev"></i>
@@ -91,6 +108,7 @@
         <i id="next"></i>
     </section> -->
     <footer class="footer">
+        <div class="menu__footer">cennik zdjecia kontakt</div>
         <p>copyright All right reserved</p>
         <span>Created for GoldenGrooming</span>
     </footer>

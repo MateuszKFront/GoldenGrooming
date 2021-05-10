@@ -1,0 +1,40 @@
+.onHamburger {
+    & .hamburger:first-child {
+        animation: reSpin 6s cubic-bezier(.8, 0, .2, 1) forwards;
+    }
+    & .hamburger:nth-child(2){
+        animation:  middleBarNonDisplay 7s forwards;
+        background-color: aqua;
+    }
+    & .hamburger:last-child {
+        animation: spin 6s cubic-bezier(.8, 0, .2, 1) forwards;
+    }
+}
+
+@keyframes middleBarNonDisplay{
+    from {
+        opacity: 1;
+    }
+    to { 
+        opacity: 0;
+    }   
+}
+@keyframes spin {
+    0% {
+        transform: translate(0px, -16px);
+    }
+    50% { transform: translate(0,0);
+    }
+    100% { transform: rotate(45deg); }
+}
+@keyframes reSpin {
+    0% { 
+        transform: translate(0px, 16px);
+    }
+    50% { 
+        transform: translate(0,0);
+    }
+    100% { 
+        transform: rotate(-45deg); 
+    }
+}

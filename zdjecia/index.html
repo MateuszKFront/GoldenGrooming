@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Golden Grooming</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/css/pageStyle.css" />
+    <style>
+        section {
+            width: 100%;
+            display: grid;
+        }
+
+        article {
+            grid-template-rows: minmax(1fr, 3fr);
+        }
+
+        /* //photo layout for mobile 1 cloumn same tablet, 2 row over 1000px but less than 1200px , 3 row over 1200px */
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo"><a href="/index.html" alt="Golden Grooming home page" class="site__header--logo--href"></a></div>
+        <nav>
+            <div id='screenNavbar'>
+                <button id="hamburger" class="listMenuDisplay">
+                    <div class="burger bar1"></div>
+                    <div class="burger bar2"></div>
+                    <div class="burger bar3"></div>
+                </button>
+            </div>
+            <ul id="linkList" class="linkList">
+                <li class="menu__item"><a href="/omnie/index.html" class="navButton">O mnie</a></li>
+                <li class="menu__item"><a href="/cennik" class="navButton">Cennik</a></li>
+                <li class="menu__item"><a href="/zdjecia" class="navButton menu__item--active">Psiaki</a></li>
+                <li class="menu__item"><a href="/kontakt/" class="navButton">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <button id="tocantackForm" class="appearFormButton"></button>
+        <form id="contact" action="return dataValidation" class="contact" style="display: none;">
+            <label for="name">Podaj swoje imię:</label>
+            <input id="name" placeholder="Imię Nazwisko" type="text" class="userData" />
+            <label for="phone"> Telefon komórkowy</label>
+            <input id="phone" placeholder="+48" type="tel" class="userData" />
+            <label for="email"> E-mail:</label>
+            <input id="email" placeholder="Mail@example.com" type="email" class="userData" />
+            <div class="dogSizeCheckbox">
+                <label for="sizes">
+                    <input id="sizes" type="checkbox" class="sizeValue" value="S" />
+                    <span>S size</span></label>
+                <label for="sizem">
+                    <input id="sizem" type="checkbox" class="sizeValue" value="M" />
+                    <span>M size</span></label>
+            </div>
+            <textarea id=" message" key="" type="text" class="userData"> </textarea>
+            <button id="sendMessage">Wyślij</button>
+        </form>
+        <article class="colar">
+            <div class="card"><img class="card__img" src="img/JYUS4043.JPG" alt="ok?"></div>
+            <div class="card"><img class="card__img" src="img/KNWC4378.JPG" alt=""></div>
+            <div class="card"><img class="card__img" src="img/LQQX5768.JPG" alt=""></div>
+            <div class="card"><img class="card__img" src="img/KJHC0055.JPG" title="I'am dog"></div>
+            <div class="card"><img class="card__img" src="img/LUJT1232.JPG" alt=""></div>
+            <div class="card"><img class="card__img" src="img/VCJH8521.JPG" alt=""></div>
+            <div class="card"><img class="card__img" src="img/TQWS7261.JPG" alt=""></div>
+            <div class="card"><img class="card__img" src="img/MKBF5330.JPG" alt=""></div>
+        </article>
+    </section>
+    <script src="../main.js"></script>
+</body>
+
+</html>
